@@ -44,7 +44,12 @@
 
   {% for block in section.blocks %}
     <div class="accordion-item">
-      <button class="accordion-button" aria-expanded="false">{{ block.settings.pregunta }}</button>
+      <button class="accordion-button" aria-expanded="false">
+        Pregunta aquí
+        <span class="icon-caret">
+          <Icon source="{CaretDownIcon}" tone="base" />
+        </span>
+      </button>
       <div class="accordion-content">
         <p>{{ block.settings.respuesta }}</p>
       </div>
@@ -53,39 +58,43 @@
 </div>
 
 <style>
-  .accordion {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .accordion {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .accordion-button {
+      width: 100%;
+      padding: 10px 15px;
+      text-align: left;
+      background: #f8f8f8;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+   .icon-caret {
+    transition: transform 0.3s ease;
   }
 
-  .accordion-button {
-    width: 100%;
-    padding: 10px 15px;
-    text-align: left;
-    background: #f8f8f8;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    outline: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .accordion-button.active .icon-caret {
+    transform: rotate(180deg);
   }
 
-  .accordion-button:hover {
-    background-color: #e0e0e0;
-  }
+    .accordion-content {
+      padding: 0 15px 10px;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
 
-  .accordion-content {
-    padding: 0 15px 10px;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .accordion-content.active {
-    display: block;
-  }
+    .accordion-content.active {
+      display: block;
+    }
 </style>
 
 <script>
