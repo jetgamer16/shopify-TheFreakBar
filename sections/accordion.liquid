@@ -36,3 +36,33 @@
   ]
 }
 {% endschema %}
+
+<div class="accordion">
+  {% if section.settings.titulo != blank %}
+    <h2>{{ section.settings.titulo }}</h2>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    <div class="accordion-item">
+      <button class="accordion-button" aria-expanded="false">{{ block.settings.pregunta }}</button>
+      <div class="accordion-content">
+        <p>{{ block.settings.respuesta }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+    document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionContent = button.nextElementSibling;
+
+      button.classList.toggle('active');
+      if (button.classList.contains('active')) {
+        accordionContent.style.display = 'block';
+      } else {
+        accordionContent.style.display = 'none';
+      }
+    });
+  });
+</script>
