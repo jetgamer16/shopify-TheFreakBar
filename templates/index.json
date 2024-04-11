@@ -75,26 +75,52 @@
         "padding_bottom": 36
       }
     },
-    "custom_liquid_p9xzrA": {
-      "type": "custom-liquid",
-      "custom_css": [
-        "h2,h3 {color: gray;}",
-        "p {color: gray;}",
-        ".faq-answer {display: none;}",
-        ".faq-question i {float: right;}",
-        ".faq-item.active .faq-answer {display: block;}"
+    "accordion_ULdVVE": {
+      "type": "accordion",
+      "blocks": {
+        "faq_UMcygf": {
+          "type": "faq",
+          "settings": {
+            "pregunta": "Cuales son nuestras Opciones??",
+            "respuesta": "sajfhakjhakjsfhaslkajflkajslkajfslkajlkjalskmclkacakljdlakfjalkjfalkhgnahvnks,hncsknca"
+          }
+        },
+        "faq_gwKJAQ": {
+          "type": "faq",
+          "settings": {
+            "pregunta": "Cuales son nuestras opiniones??",
+            "respuesta": "skdjf,hnsfdflkajlkajcjlakjcnlkanvaklncaklnvlkajm"
+          }
+        },
+        "faq_Wbta6q": {
+          "type": "faq",
+          "settings": {
+            "pregunta": "",
+            "respuesta": ""
+          }
+        },
+        "faq_8zbPH6": {
+          "type": "faq",
+          "settings": {
+            "pregunta": "",
+            "respuesta": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_UMcygf",
+        "faq_gwKJAQ",
+        "faq_Wbta6q",
+        "faq_8zbPH6"
       ],
       "settings": {
-        "custom_liquid": "<section class=\"faq-section\">\n    <h2 class=\"faq-title\">Preguntas frecuentes<\/h2>\n    \n    <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 1? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 1.<\/p>\n    <\/div>\n    \n    <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 2? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 2.<\/p>\n    <\/div>\n    \n    <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 3? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 3.<\/p>\n    <\/div>\n <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 4? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 4.<\/p>\n    <\/div>\n <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 5? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 5.<\/p>\n    <\/div>\n <div class=\"faq-item\">\n        <h3 class=\"faq-question\">¿Pregunta 6? <i class=\"fa fa-chevron-down\"><\/i><\/h3>\n        <p class=\"faq-answer\">Respuesta a la pregunta 6.<\/p>\n    <\/div>\n<\/section>",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 52
+        "titulo": "Preguntas Frecuentes"
       }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "custom_liquid_p9xzrA"
+    "accordion_ULdVVE"
   ]
 }
