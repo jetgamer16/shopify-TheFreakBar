@@ -91,27 +91,11 @@
             "pregunta": "Cuales son nuestras opiniones??",
             "respuesta": "skdjf,hnsfdflkajlkajcjlakjcnlkanvaklncaklnvlkajm"
           }
-        },
-        "faq_Wbta6q": {
-          "type": "faq",
-          "settings": {
-            "pregunta": "",
-            "respuesta": ""
-          }
-        },
-        "faq_8zbPH6": {
-          "type": "faq",
-          "settings": {
-            "pregunta": "",
-            "respuesta": ""
-          }
         }
       },
       "block_order": [
         "faq_UMcygf",
-        "faq_gwKJAQ",
-        "faq_Wbta6q",
-        "faq_8zbPH6"
+        "faq_gwKJAQ"
       ],
       "settings": {
         "titulo": "Preguntas Frecuentes"
