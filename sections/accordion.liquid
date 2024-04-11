@@ -39,7 +39,7 @@
 
 <div class="accordion">
   {% if section.settings.titulo != blank %}
-    <h2>{{ section.settings.titulo }}</h2>
+    <h1>{{ section.settings.titulo }}</h1>
   {% endif %}
 
   {% for block in section.blocks %}
@@ -54,7 +54,7 @@
 
 <style>
   .accordion {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
