@@ -52,6 +52,42 @@
   {% endfor %}
 </div>
 
+<style>
+  .accordion {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .accordion-button {
+    width: 100%;
+    padding: 10px 15px;
+    text-align: left;
+    background: #f8f8f8;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .accordion-button:hover {
+    background-color: #e0e0e0;
+  }
+
+  .accordion-content {
+    padding: 0 15px 10px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .accordion-content.active {
+    display: block;
+  }
+</style>
+
 <script>
     document.querySelectorAll('.accordion-button').forEach(button => {
     button.addEventListener('click', () => {
