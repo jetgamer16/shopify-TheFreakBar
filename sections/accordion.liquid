@@ -1,6 +1,38 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "FAQ Acordeón",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título de la sección",
+      "default": "Preguntas Frecuentes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Elemento de FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pregunta",
+          "label": "Pregunta"
+        },
+        {
+          "type": "textarea",
+          "id": "respuesta",
+          "label": "Respuesta"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "FAQ Acordeón",
+      "category": "FAQ"
+    }
+  ]
+}
 {% endschema %}
