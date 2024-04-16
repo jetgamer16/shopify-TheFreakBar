@@ -3,10 +3,10 @@
   "name": "Slider de Imágenes",
   "settings": [
     {
-      "type": "image_picker",
+      "type": "text",
       "id": "slider_images",
-      "label": "Imágenes del Slider",
-      "info": "Selecciona las imágenes que deseas mostrar en el slider."
+      "label": "URLs de las imágenes del Slider",
+      "info": "Ingresa las URLs de las imágenes que deseas mostrar en el slider. Separa cada URL con una coma (,)."
     },
     {
       "type": "checkbox",
@@ -27,16 +27,14 @@
 <div id="{{ section_id }}" class="{{ section_classes }}">
   <div class="swiper-container {{ section_id }}__swiper-container">
     <div class="swiper-wrapper">
-      {% for image in section.settings.slider_images %}
+      {% assign images = section.settings.slider_images | split: ',' %}
+      {% for image in images %}
         <div class="swiper-slide {{ section_id }}__swiper-slide">
-          <img src="{{ image }}" alt="Slide" width="600" height="400">
+          <img src="{{ image | strip }}" alt="Slide" width="600" height="400">
         </div>
       {% endfor %}
     </div>
     <div class="swiper-pagination {{ section_id }}__swiper-pagination"></div>
-    <!-- Si deseas agregar controles de navegación, puedes descomentar las siguientes líneas -->
-    <!-- <div class="swiper-button-prev {{ section_id }}__swiper-button-prev"></div> -->
-    <!-- <div class="swiper-button-next {{ section_id }}__swiper-button-next"></div> -->
   </div>
 </div>
 
@@ -53,11 +51,6 @@
           el: '.{{ section_id }}__swiper-pagination',
           clickable: true,
         },
-        // Si deseas agregar controles de navegación, puedes descomentar las siguientes líneas
-        // navigation: {
-        //   nextEl: '.{{ section_id }}__swiper-button-next',
-        //   prevEl: '.{{ section_id }}__swiper-button-prev',
-        // },
       });
     });
   </script>
