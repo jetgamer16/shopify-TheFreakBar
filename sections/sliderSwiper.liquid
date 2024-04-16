@@ -3,33 +3,30 @@
   "name": "Slider de Imágenes",
   "settings": [
     {
-      "type": "text",
-      "id": "slider_images",
-      "label": "URL de la imagen del Slider",
-      "info": "Ingresa la URL de la imagen que deseas mostrar en el slider."
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen del Slider",
+      "info": "Selecciona una imagen para agregar al slider."
     },
     {
       "type": "checkbox",
       "id": "enable_slider",
-      "label": "Habilitar slider",
+      "label": "Habilitar Slider",
       "default": true
-    }
-  ],
-  "presets": [
-    {
-      "category": "Productos",
-      "name": "Slider de Imágenes"
     }
   ]
 }
+
 {% endschema %}
 
 <div id="{{ section_id }}" class="{{ section_classes }}">
   <div class="swiper-container {{ section_id }}__swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide {{ section_id }}__swiper-slide">
-        <img src="{{ section.settings.slider_images }}" alt="Slide" width="600" height="400">
-      </div>
+      {% for image_item in section.settings.slider_images %}
+        <div class="swiper-slide {{ section_id }}__swiper-slide">
+          <img src="{{ image_item.image }}" alt="Slide" width="600" height="400">
+        </div>
+      {% endfor %}
     </div>
     <div class="swiper-pagination {{ section_id }}__swiper-pagination"></div>
   </div>
@@ -62,8 +59,12 @@
     width: 100%;
     height: 100%;
   }
+  .{{ section_id }}__swiper-slide {
+    text-align: center;
+  }
   .{{ section_id }}__swiper-slide img {
-    width: 100%;
+    display: inline-block;
+    max-width: 100%;
     height: auto;
   }
 </style>
