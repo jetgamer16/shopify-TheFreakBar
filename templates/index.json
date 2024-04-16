@@ -100,11 +100,18 @@
       "settings": {
         "titulo": "Preguntas Frecuentes"
       }
+    },
+    "slider_swiper_DQ63BC": {
+      "type": "sliderSwiper",
+      "settings": {
+        "slider_images": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg"
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "accordion_ULdVVE"
+    "accordion_ULdVVE",
+    "slider_swiper_DQ63BC"
   ]
 }
