@@ -5,8 +5,8 @@
     {
       "type": "text",
       "id": "slider_images",
-      "label": "URLs de las imágenes del Slider",
-      "info": "Ingresa las URLs de las imágenes que deseas mostrar en el slider. Separa cada URL con una coma (,)."
+      "label": "URL de la imagen del Slider",
+      "info": "Ingresa la URL de la imagen que deseas mostrar en el slider."
     },
     {
       "type": "checkbox",
@@ -27,12 +27,9 @@
 <div id="{{ section_id }}" class="{{ section_classes }}">
   <div class="swiper-container {{ section_id }}__swiper-container">
     <div class="swiper-wrapper">
-      {% assign images = section.settings.slider_images | split: ',' %}
-      {% for image in images %}
-        <div class="swiper-slide {{ section_id }}__swiper-slide">
-          <img src="{{ image | strip }}" alt="Slide" width="600" height="400">
-        </div>
-      {% endfor %}
+      <div class="swiper-slide {{ section_id }}__swiper-slide">
+        <img src="{{ section.settings.slider_images }}" alt="Slide" width="600" height="400">
+      </div>
     </div>
     <div class="swiper-pagination {{ section_id }}__swiper-pagination"></div>
   </div>
@@ -51,6 +48,9 @@
           el: '.{{ section_id }}__swiper-pagination',
           clickable: true,
         },
+        // Permitir el desplazamiento del ratón para navegar por las imágenes
+        mousewheel: true,
+        keyboard: true,
       });
     });
   </script>
