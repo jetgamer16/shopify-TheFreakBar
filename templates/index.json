@@ -100,11 +100,19 @@
       "settings": {
         "titulo": "Preguntas Frecuentes"
       }
+    },
+    "slider_swiper_i6KwFf": {
+      "type": "sliderSwiper",
+      "settings": {
+        "slider_images": "https:\/\/i.pinimg.com\/236x\/68\/9b\/56\/689b564aa3cd8407e6468169fc66cb33.jpg,https:\/\/i.pinimg.com\/236x\/6a\/68\/fa\/6a68fa67cbb6c84babcd6633add966fd.jpg",
+        "enable_slider": true
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "accordion_ULdVVE"
+    "accordion_ULdVVE",
+    "slider_swiper_i6KwFf"
   ]
 }
