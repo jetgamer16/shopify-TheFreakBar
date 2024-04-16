@@ -7,6 +7,12 @@
       "id": "slider_images",
       "label": "Imágenes del Slider",
       "info": "Selecciona las imágenes que deseas mostrar en el slider."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Habilitar slider",
+      "default": true
     }
   ],
   "presets": [
@@ -34,7 +40,7 @@
   </div>
 </div>
 
-{%- if section.settings.enable_slider -%}
+{% if section.settings.enable_slider != false %}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var {{ section_id }}Swiper = new Swiper('.{{ section_id }}__swiper-container', {
@@ -55,7 +61,7 @@
       });
     });
   </script>
-{%- endif -%}
+{% endif %}
 
 <style>
   /* Estilos CSS personalizados para el slider */
@@ -68,4 +74,3 @@
     height: auto;
   }
 </style>
-
