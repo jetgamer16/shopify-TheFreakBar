@@ -18,53 +18,53 @@
 }
 
 {% endschema %}
+{% comment %}
+  Styles for Swiper
+{% endcomment %}
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
 
-<div id="{{ section_id }}" class="{{ section_classes }}">
-  <div class="swiper-container {{ section_id }}__swiper-container">
-    <div class="swiper-wrapper">
-      {% for image_item in section.settings.slider_images %}
-        <div class="swiper-slide {{ section_id }}__swiper-slide">
-          <img src="{{ image_item.image }}" alt="Slide" width="600" height="400">
-        </div>
-      {% endfor %}
-    </div>
-    <div class="swiper-pagination {{ section_id }}__swiper-pagination"></div>
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+{% comment %}
+  Section HTML
+{% endcomment %}
+<div class="swiper-container" id="{{ section.id }}">
+  <div class="swiper-wrapper">
+    {% if section.settings.image %}
+      <div class="swiper-slide">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Slide">
+      </div>
+    {% endif %}
   </div>
+
+  <div class="swiper-pagination"></div>
 </div>
 
-{% if section.settings.enable_slider != false %}
+{% comment %}
+  Section JavaScript
+{% endcomment %}
+{% if section.settings.enable_slider %}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var {{ section_id }}Swiper = new Swiper('.{{ section_id }}__swiper-container', {
+      var swiper = new Swiper('#{{ section.id }} .swiper-container', {
         loop: true,
         autoplay: {
           delay: 5000,
-          disableOnInteraction: false,
+          disableOnInteraction: false
         },
         pagination: {
-          el: '.{{ section_id }}__swiper-pagination',
-          clickable: true,
-        },
-        // Permitir el desplazamiento del ratón para navegar por las imágenes
-        mousewheel: true,
-        keyboard: true,
+          el: '#{{ section.id }} .swiper-pagination',
+          clickable: true
+        }
       });
     });
   </script>
 {% endif %}
-
-<style>
-  /* Estilos CSS personalizados para el slider */
-  .{{ section_id }}__swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-  .{{ section_id }}__swiper-slide {
-    text-align: center;
-  }
-  .{{ section_id }}__swiper-slide img {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
