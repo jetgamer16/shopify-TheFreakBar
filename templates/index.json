@@ -100,19 +100,11 @@
       "settings": {
         "titulo": "Preguntas Frecuentes"
       }
-    },
-    "slider_swiper_PehA9G": {
-      "type": "sliderSwiper",
-      "settings": {
-        "slider_images": "shopify:\/\/shop_images\/SV4PT5_ES_242.png",
-        "enable_slider": true
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "accordion_ULdVVE",
-    "slider_swiper_PehA9G"
+    "accordion_ULdVVE"
   ]
 }
