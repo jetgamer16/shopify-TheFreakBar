@@ -1,6 +1,59 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Slider de Imágenes",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "slider_images",
+      "label": "Imágenes del Slider",
+      "info": "Selecciona las imágenes que deseas mostrar en el slider."
+    }
+  ],
+  "presets": [
+    {
+      "category": "Productos",
+      "name": "Slider de Imágenes"
+    }
+  ]
+}
 {% endschema %}
+
+<div id="{{ section_id }}" class="{{ section_classes }}">
+  <div class="swiper-container {{ section_id }}__swiper-container">
+    <div class="swiper-wrapper">
+      {% for image in section.settings.slider_images %}
+        <div class="swiper-slide {{ section_id }}__swiper-slide">
+          <img src="{{ image }}" alt="Slide" width="600" height="400">
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination {{ section_id }}__swiper-pagination"></div>
+    <!-- Si deseas agregar controles de navegación, puedes descomentar las siguientes líneas -->
+    <!-- <div class="swiper-button-prev {{ section_id }}__swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next {{ section_id }}__swiper-button-next"></div> -->
+  </div>
+</div>
+
+{%- if section.settings.enable_slider -%}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var {{ section_id }}Swiper = new Swiper('.{{ section_id }}__swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.{{ section_id }}__swiper-pagination',
+          clickable: true,
+        },
+        // Si deseas agregar controles de navegación, puedes descomentar las siguientes líneas
+        // navigation: {
+        //   nextEl: '.{{ section_id }}__swiper-button-next',
+        //   prevEl: '.{{ section_id }}__swiper-button-prev',
+        // },
+      });
+    });
+  </script>
+{%- endif -%}
+
