@@ -1,11 +1,5 @@
 {
   "sections": {
-    "slider_swiper_DQ63BC": {
-      "type": "sliderSwiper",
-      "settings": {
-        "slider_images": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg"
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -106,12 +100,19 @@
       "settings": {
         "titulo": "Preguntas Frecuentes"
       }
+    },
+    "slider_swiper_PehA9G": {
+      "type": "sliderSwiper",
+      "settings": {
+        "slider_images": "shopify:\/\/shop_images\/SV4PT5_ES_242.png",
+        "enable_slider": true
+      }
     }
   },
   "order": [
-    "slider_swiper_DQ63BC",
     "image_banner",
     "featured_collection",
-    "accordion_ULdVVE"
+    "accordion_ULdVVE",
+    "slider_swiper_PehA9G"
   ]
 }
