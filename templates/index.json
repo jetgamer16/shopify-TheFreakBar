@@ -198,7 +198,7 @@
         "video_RfKA9g": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/www.youtube.com\/watch?v=8ofdkzY1KXo"
+            "video": "https:\/\/www.youtube.com\/embed\/y3Q2fRqLlFk"
           }
         },
         "video_iCjdNV": {
@@ -210,7 +210,7 @@
         "video_4r7izb": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/www.youtube.com\/watch?v=d-JKbf9bRXw"
+            "video": "shopify:\/\/products\/gift-card"
           }
         }
       },
