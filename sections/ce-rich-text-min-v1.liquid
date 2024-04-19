@@ -57,12 +57,274 @@ Email: carlos@carlosenrique.dev
                 >{{ block.settings.button_two_label | scape }}</a>
               {%- endif -%}
             </div>
-          {%- endcase -%}
+          {%- when 'image' -%}
+{%- if block.settings.image_position == 'left' -%}
+  left
+{%- else -%}
+  right
+{%- endif -%}
+            <div class="image-{{ image_class }}">
+              <img src="{{ block.settings.image | img_url: 'master' }}" style="width: {{ block.settings.image_width }}%;">
+            </div>
+        {%- endcase -%}
       {%- endfor -%}
     </div>
   </div>
 </div>
 
 {% schema %}
-{"name":"CE | Rich text","tag":"section","settings":[{"type":"select","id":"section_width","options":[{"value":"full","label":"Full width"},{"value":"custom","label":"Custom width"}],"default":"full","label":"Section width"},{"type":"range","id":"custom_width","min":640,"max":1800,"step":20,"unit":"px","label":"Custom width (desktop)","default":1200,"info":"Only work with custom width selected"},{"type":"color","id":"bg_color","label":"Background color","default":"#ffffff"},{"type":"header","content":"Content alignment"},{"type":"select","id":"content_alignment_mobile","options":[{"value":"left","label":"Left"},{"value":"center","label":"Center"},{"value":"right","label":"Right"}],"default":"center","label":"Content alignment (mobile)"},{"type":"select","id":"content_alignment_desktop","options":[{"value":"left","label":"Left"},{"value":"center","label":"Center"},{"value":"right","label":"Right"}],"default":"center","label":"Content alignment (desktop)"},{"type":"header","content":"Left/Right Spacing"},{"type":"range","id":"padding_left_right_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Left/Right (mobile)","default":12},{"type":"range","id":"padding_left_right_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Left/Right (desktop)","default":16},{"type":"header","content":"Top/Bottom Spacing"},{"type":"range","id":"mobile_padding_top","min":0,"max":200,"step":2,"unit":"px","label":"Top (mobile)","default":32},{"type":"range","id":"mobile_padding_bottom","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (mobile)","default":32},{"type":"range","id":"desktop_padding_top","min":0,"max":200,"step":2,"unit":"px","label":"Top (desktop)","default":64},{"type":"range","id":"desktop_padding_bottom","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (desktop)","default":64}],"blocks":[{"type":"heading","name":"Heading","settings":[{"type":"inline_richtext","id":"heading","default":"Heading text","label":"Heading"},{"type":"header","content":"Font color"},{"type":"color","id":"heading_font_color_mobile","label":"Font color (mobile)","default":"#212121"},{"type":"color","id":"heading_font_color_desktop","label":"Font color (desktop)","default":"#212121"},{"type":"header","content":"Font size"},{"type":"range","id":"heading_font_size_mobile","min":2,"max":200,"step":2,"unit":"px","label":"Font size (mobile)","default":30},{"type":"range","id":"heading_font_size_desktop","min":2,"max":200,"step":2,"unit":"px","label":"Font size (desktop)","default":40},{"type":"header","content":"Top/Bottom Spacing"},{"type":"range","id":"heading_padding_top_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Top (mobile)","default":8},{"type":"range","id":"heading_padding_bottom_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (mobile)","default":8},{"type":"range","id":"heading_padding_top_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Top (desktop)","default":16},{"type":"range","id":"heading_padding_bottom_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (desktop)","default":16}]},{"type":"caption","name":"Caption","settings":[{"type":"text","id":"caption","default":"CAPTION","label":"Text"},{"type":"header","content":"Font color"},{"type":"color","id":"caption_font_color_mobile","label":"Font color (mobile)","default":"#212121"},{"type":"color","id":"caption_font_color_desktop","label":"Font color (desktop)","default":"#212121"},{"type":"header","content":"Font size"},{"type":"range","id":"caption_font_size_mobile","min":2,"max":200,"step":2,"unit":"px","label":"Font size (mobile)","default":12},{"type":"range","id":"caption_font_size_desktop","min":2,"max":200,"step":2,"unit":"px","label":"Font size (desktop)","default":12},{"type":"header","content":"Top/Bottom Spacing"},{"type":"range","id":"caption_padding_top_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Top (mobile)","default":8},{"type":"range","id":"caption_padding_bottom_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (mobile)","default":8},{"type":"range","id":"caption_padding_top_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Top (desktop)","default":16},{"type":"range","id":"caption_padding_bottom_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (desktop)","default":16}]},{"type":"text","name":"Text","settings":[{"type":"richtext","id":"text","default":"<p>Communicate your brand's story to your audience. Present your products, share updates, or greet visitors to your online shop.</p>","label":"Description"},{"type":"header","content":"Font color"},{"type":"color","id":"text_font_color_mobile","label":"Font color (mobile)","default":"#212121"},{"type":"color","id":"text_font_color_desktop","label":"Font color (desktop)","default":"#212121"},{"type":"header","content":"Font size"},{"type":"range","id":"text_font_size_mobile","min":2,"max":200,"step":2,"unit":"px","label":"Font size (mobile)","default":14},{"type":"range","id":"text_font_size_desktop","min":2,"max":200,"step":2,"unit":"px","label":"Font size (desktop)","default":16},{"type":"header","content":"Line height"},{"type":"range","id":"text_line_height_mobile","min":2,"max":200,"step":2,"unit":"px","label":"Line height (mobile)","default":18},{"type":"range","id":"text_line_height_desktop","min":2,"max":200,"step":2,"unit":"px","label":"Line height (desktop)","default":26},{"type":"header","content":"Top/Bottom Spacing"},{"type":"range","id":"text_padding_top_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Top (mobile)","default":8},{"type":"range","id":"text_padding_bottom_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (mobile)","default":8},{"type":"range","id":"text_padding_top_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Top (desktop)","default":16},{"type":"range","id":"text_padding_bottom_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (desktop)","default":16}]},{"type":"button","name":"Buttons","settings":[{"type":"header","content":"Button one"},{"type":"color","id":"button_one_font_color","label":"Button font color","default":"#000000"},{"type":"text","id":"button_one_label","default":"Button text","label":"Button one text","info":"Leave the text blank to hide the button."},{"type":"url","id":"button_one_link","label":"Button one link"},{"type":"header","content":"Button two"},{"type":"color","id":"button_two_font_color","label":"Button font color","default":"#000000"},{"type":"text","id":"button_two_label","label":"Button two text","info":"Leave the text blank to hide the button."},{"type":"url","id":"button_two_link","label":"Button two link"},{"type":"header","content":"Top/Bottom Spacing"},{"type":"range","id":"button_padding_top_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Top (mobile)","default":8},{"type":"range","id":"button_padding_bottom_mobile","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (mobile)","default":8},{"type":"range","id":"button_padding_top_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Top (desktop)","default":16},{"type":"range","id":"button_padding_bottom_desktop","min":0,"max":200,"step":2,"unit":"px","label":"Bottom (desktop)","default":16},{"type":"liquid","id":"button_one_custom_css","label":"Button one custom class","info":"Sample: button button--primary"},{"type":"liquid","id":"button_two_custom_css","label":"Button two custom class","info":"Sample: button button--secondary"}]}],"presets":[{"name":"CE | Rich text","blocks":[{"type":"caption"},{"type":"heading"},{"type":"text"},{"type":"button"}]}]}
+{
+  "name": "CE | Rich text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        {"value": "full", "label": "Full width"},
+        {"value": "custom", "label": "Custom width"}
+      ],
+      "default": "full",
+      "label": "Section width"
+    },
+    {
+      "type": "range",
+      "id": "custom_width",
+      "min": 640,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom width (desktop)",
+      "default": 1200,
+      "info": "Only work with custom width selected"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_mobile",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "center",
+      "label": "Content alignment (mobile)"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_desktop",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "center",
+      "label": "Content alignment (desktop)"
+    },
+    {
+      "type": "header",
+      "content": "Left/Right Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_left_right_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Left/Right (mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_left_right_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Left/Right (desktop)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Top/Bottom Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top (mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom (mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom (desktop)",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {"type": "inline_richtext", "id": "heading", "default": "Heading text", "label": "Heading"},
+        {
+          "type": "header",
+          "content": "Font color"
+        },
+        {"type": "color", "id": "heading_font_color_mobile", "label": "Font color (mobile)", "default": "#212121"},
+        {"type": "color", "id": "heading_font_color_desktop", "label": "Font color (desktop)", "default": "#212121"},
+        {
+          "type": "header",
+          "content": "Font size"
+        },
+        {"type": "range", "id": "heading_font_size_mobile", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (mobile)", "default": 30},
+        {"type": "range", "id": "heading_font_size_desktop", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (desktop)", "default": 40},
+        {
+          "type": "header",
+          "content": "Top/Bottom Spacing"
+        },
+        {"type": "range", "id": "heading_padding_top_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (mobile)", "default": 8},
+        {"type": "range", "id": "heading_padding_bottom_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (mobile)", "default": 8},
+        {"type": "range", "id": "heading_padding_top_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (desktop)", "default": 16},
+        {"type": "range", "id": "heading_padding_bottom_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (desktop)", "default": 16}
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "Caption",
+      "settings": [
+        {"type": "inline_richtext", "id": "caption", "default": "Caption text", "label": "Caption"},
+        {
+          "type": "header",
+          "content": "Font color"
+        },
+        {"type": "color", "id": "caption_font_color_mobile", "label": "Font color (mobile)", "default": "#757575"},
+        {"type": "color", "id": "caption_font_color_desktop", "label": "Font color (desktop)", "default": "#757575"},
+        {
+          "type": "header",
+          "content": "Font size"
+        },
+        {"type": "range", "id": "caption_font_size_mobile", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (mobile)", "default": 14},
+        {"type": "range", "id": "caption_font_size_desktop", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (desktop)", "default": 16},
+        {
+          "type": "header",
+          "content": "Top/Bottom Spacing"
+        },
+        {"type": "range", "id": "caption_padding_top_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (mobile)", "default": 8},
+        {"type": "range", "id": "caption_padding_bottom_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (mobile)", "default": 8},
+        {"type": "range", "id": "caption_padding_top_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (desktop)", "default": 16},
+        {"type": "range", "id": "caption_padding_bottom_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (desktop)", "default": 16}
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {"type": "richtext", "id": "text", "default": "<p>Your text here...</p>", "label": "Text"},
+        {
+          "type": "header",
+          "content": "Font color"
+        },
+        {"type": "color", "id": "text_font_color_mobile", "label": "Font color (mobile)", "default": "#212121"},
+        {"type": "color", "id": "text_font_color_desktop", "label": "Font color (desktop)", "default": "#212121"},
+        {
+          "type": "header",
+          "content": "Font size"
+        },
+        {"type": "range", "id": "text_font_size_mobile", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (mobile)", "default": 16},
+        {"type": "range", "id": "text_font_size_desktop", "min": 2, "max": 200, "step": 2, "unit": "px", "label": "Font size (desktop)", "default": 18},
+        {
+          "type": "header",
+          "content": "Line height"
+        },
+        {"type": "range", "id": "text_line_height_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Line height (mobile)", "default": 24},
+        {"type": "range", "id": "text_line_height_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Line height (desktop)", "default": 28},
+        {
+          "type": "header",
+          "content": "Top/Bottom Spacing"
+        },
+        {"type": "range", "id": "text_padding_top_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (mobile)", "default": 8},
+        {"type": "range", "id": "text_padding_bottom_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (mobile)", "default": 8},
+        {"type": "range", "id": "text_padding_top_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (desktop)", "default": 16},
+        {"type": "range", "id": "text_padding_bottom_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (desktop)", "default": 16}
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+    {"type": "text", "id": "button_one_label", "default": "Button 1", "label": "Button one label"},
+    {"type": "url", "id": "button_one_link", "label": "Button one link"},
+    {"type": "text", "id": "button_one_custom_css", "default": "button-primary", "label": "Button one custom css"},
+    {"type": "color", "id": "button_one_font_color", "default": "#ffffff", "label": "Button one font color"},
+    {"type": "range", "id": "button_padding_top_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (mobile)", "default": 12},
+    {"type": "range", "id": "button_padding_bottom_mobile", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (mobile)", "default": 12},
+    {"type": "range", "id": "button_padding_top_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Top (desktop)", "default": 16},
+    {"type": "range", "id": "button_padding_bottom_desktop", "min": 0, "max": 200, "step": 2, "unit": "px", "label": "Bottom (desktop)", "default": 16},
+    {"type": "text", "id": "button_two_label", "default": "Button 2", "label": "Button two label"},
+    {"type": "url", "id": "button_two_link", "label": "Button two link"},
+    {"type": "text", "id": "button_two_custom_css", "default": "button-secondary", "label": "Button two custom css"},
+    {"type": "color", "id": "button_two_font_color", "default": "#ffffff", "label": "Button two font color"}
+  ]
+    },
+    {
+  "type": "image",
+  "name": "Image",
+  "settings": [
+    {"type": "image_picker", "id": "image", "label": "Image"},
+    {"type": "range", "id": "image_width", "min": 10, "max": 100, "step": 1, "unit": "%", "label": "Width", "default": 50},
+    {
+      "type": "header",
+      "content": "Image position"
+    },
+    {"type": "radio", "id": "image_position", "label": "Image position", "options": [{"value": "left", "label": "Left"}, {"value": "right", "label": "Right"}], "default": "left"}
+  ]
+}
+
+  ],
+  "presets": [
+    {
+      "name": "CE | Rich text",
+      "category": "Text"
+    }
+  ]
+}
 {% endschema %}
