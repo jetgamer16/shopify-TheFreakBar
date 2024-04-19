@@ -283,7 +283,6 @@
   </head>
 
 
- {% render 'breadcrumbs' %} 
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -295,6 +294,8 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
+    
+   {% sections 'breadcrumbs' %} 
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
