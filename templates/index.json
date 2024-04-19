@@ -195,32 +195,32 @@
     "ce_carousel_ugc_min_v2_RNdDfk": {
       "type": "ce-carousel-ugc-min-v2",
       "blocks": {
-        "video_RfKA9g": {
-          "type": "video",
-          "settings": {
-            "video": "https:\/\/www.youtube.com\/embed\/y3Q2fRqLlFk"
-          }
-        },
         "video_iCjdNV": {
           "type": "video",
           "settings": {
             "video": "shopify:\/\/collections\/hydrogen"
           }
         },
+        "video_RfKA9g": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/embed\/y3Q2fRqLlFk"
+          }
+        },
         "video_4r7izb": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/products\/gift-card"
+            "video": "{{ shop.brand.favicon_url }}"
           }
         }
       },
       "block_order": [
-        "video_RfKA9g",
         "video_iCjdNV",
+        "video_RfKA9g",
         "video_4r7izb"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "#eae6e6",
         "custom_width": true,
         "max_width_desktop": 1280,
         "vertical_alignment": "middle",
