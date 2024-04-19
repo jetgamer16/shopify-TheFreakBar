@@ -249,6 +249,65 @@
         "padding_bottom_desktop": 64,
         "padding_left_desktop": 0
       }
+    },
+    "ce_dynamic_motion_bar_min_v1_rRGYTD": {
+      "type": "ce-dynamic-motion-bar-min-v1",
+      "blocks": {
+        "brand_f4mF7T": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg",
+            "brand_text": "DOLOREM IPSUM<br> QUIA DOLOR SIT AMET."
+          }
+        },
+        "brand_bYBdNi": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/SV4PT5_ES_242.png",
+            "brand_text": "DOLOREM IPSUM<br> QUIA DOLOR SIT AMET."
+          }
+        },
+        "brand_dqfmb7": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/wax-special.png",
+            "brand_text": "DOLOREM IPSUM<br> QUIA DOLOR SIT AMET."
+          }
+        }
+      },
+      "block_order": [
+        "brand_f4mF7T",
+        "brand_bYBdNi",
+        "brand_dqfmb7"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "animation_direction": "left",
+        "animation_duration": 10,
+        "section_width": "full",
+        "custom_width": 1200,
+        "custom_gap_mobile": 32,
+        "custom_gap_desktop": 64,
+        "padding_left_right_mobile": 0,
+        "padding_left_right_desktop": 0,
+        "show_heading": "yes",
+        "heading_text": "PRODUCTOS DESTACADOS",
+        "heading_font_color": "#212121",
+        "heading_font_size_mobile": 14,
+        "heading_font_size_desktop": 14,
+        "margin_bottom_mobile": 16,
+        "image_size_mobile": 32,
+        "image_size_desktop": 32,
+        "show_items_text": "yes",
+        "items_text_font_color": "#212121",
+        "items_line_height": 18,
+        "items_font_size_mobile": 14,
+        "items_font_size_desktop": 14,
+        "mobile_padding_top": 16,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
     }
   },
   "order": [
@@ -257,6 +316,7 @@
     "accordion_ULdVVE",
     "slider_swiper_i6KwFf",
     "ce_rich_text_min_v1_PGnGWX",
-    "ce_carousel_ugc_min_v2_RNdDfk"
+    "ce_carousel_ugc_min_v2_RNdDfk",
+    "ce_dynamic_motion_bar_min_v1_rRGYTD"
   ]
 }
