@@ -138,6 +138,14 @@
             "heading_padding_bottom_desktop": 16
           }
         },
+        "image_3QJhaQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SV4PT5_ES_242.png",
+            "image_width": 58,
+            "image_position": "right"
+          }
+        },
         "text_jCzUYP": {
           "type": "text",
           "settings": {
@@ -157,24 +165,25 @@
         "button_qV9F8n": {
           "type": "button",
           "settings": {
-            "button_one_font_color": "#ff0000",
             "button_one_label": "Button text",
             "button_one_link": "",
-            "button_two_font_color": "#000000",
-            "button_two_label": "",
-            "button_two_link": "",
+            "button_one_custom_css": "",
+            "button_one_font_color": "#ff0000",
             "button_padding_top_mobile": 8,
             "button_padding_bottom_mobile": 8,
             "button_padding_top_desktop": 16,
             "button_padding_bottom_desktop": 16,
-            "button_one_custom_css": "",
-            "button_two_custom_css": ""
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_custom_css": "",
+            "button_two_font_color": "#000000"
           }
         }
       },
       "block_order": [
         "caption_kekj6n",
         "heading_7y3D9j",
+        "image_3QJhaQ",
         "text_jCzUYP",
         "button_qV9F8n"
       ],
@@ -281,7 +290,7 @@
         "brand_dqfmb7"
       ],
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "animation_direction": "left",
         "animation_duration": 10,
         "section_width": "full",
