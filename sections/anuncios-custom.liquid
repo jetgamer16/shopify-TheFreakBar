@@ -1,6 +1,65 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign social_icons = false
+  if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank or settings.social_twitter_link != blank or settings.social_pinterest_link != blank or settings.social_snapchat_link != blank or settings.social_tumblr_link != blank or settings.social_vimeo_link != blank
+    assign social_icons = true
+  endif
+-%}
+
+
+{% if social_icons %}
+  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} utility-bar--bottom-border{% endif %}{% if language_country_selector %} header-localization{% endif %}">
+  <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector %} utility-bar__grid--3-col{% elsif announcement_bar or language_country_selector %} utility-bar__grid--2-col{% endif %}">
+    {%- if social_icons -%}
+      {%- render 'social-icons' -%}
+    {%- endif -%}
+
+    <slideshow-component class="announcement-bar" role="region" aria-roledescription="carousel" aria-label="Announcement bar">
+      <div class="announcement-bar-slider slider-buttons">
+        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Previous announcement" aria-controls="Slider-{{ section.id }}">
+          {% render 'icon-caret' %}
+        </button>
+        <div class="slider slider--everywhere" id="Slider-{{ section.id }}" aria-live="polite" aria-atomic="true" data-autoplay="{{ section.settings.auto_rotate }}" data-speed="{{ section.settings.change_slides_speed }}">
+          {%- for block in section.blocks -%}
+            <div class="slideshow__slide slider__slide" id="Slide-{{ section.id }}-{{ forloop.index }}" role="group" aria-roledescription="Announcement" aria-label="{{ forloop.index }} of {{ forloop.length }}" tabindex="-1">
+              <div class="announcement-bar__announcement" role="region" aria-label="Announcement">
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+                {%- endif -%}
+                    <p class="announcement-bar__message h5">
+                      <span>{{ block.settings.text | escape }}</span>
+                      {% render 'icon-arrow' %}
+                    </p>
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+        <button type="button" class="slider-button slider-button--next" name="next" aria-label="Next announcement" aria-controls="Slider-{{ section.id }}">
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    </slideshow-component>
+
+    <div class="localization-wrapper">
+      {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+        <localization-form>
+          <!-- Localization form content for country selector -->
+        </localization-form>
+      {% endif %}
+
+      {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+        <localization-form>
+          <!-- Localization form content for language selector -->
+        </localization-form>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
