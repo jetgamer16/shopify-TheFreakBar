@@ -1,6 +1,37 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Topbar personalizado",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "topbar_links",
+      "label": "Enlaces del topbar"
+      
+    }
+  ]
+}
 {% endschema %}
+
+
+
+<div class="topbar">
+    <ul>
+        <li class="dropdown">
+            <a href="#">Colecciones</a>
+            <ul class="dropdown-menu">
+                {% for collection in collections %}
+                    <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Páginas</a>
+            <ul class="dropdown-menu">
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <!-- Agregar más dropdowns según sea necesario -->
+    </ul>
+</div>
