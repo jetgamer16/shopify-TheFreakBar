@@ -47,6 +47,13 @@
     "announcement_bar_whDVQC": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_H4p4J7": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
         "announcement_qJEQ3B": {
           "type": "announcement",
           "settings": {
@@ -77,6 +84,7 @@
         }
       },
       "block_order": [
+        "announcement_H4p4J7",
         "announcement_qJEQ3B",
         "announcement_ahXUth",
         "announcement_FRhT8N",
@@ -86,7 +94,7 @@
         "color_scheme": "",
         "show_line_separator": false,
         "show_social": true,
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 6,
         "enable_country_selector": false,
         "enable_language_selector": false
